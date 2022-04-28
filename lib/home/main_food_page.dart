@@ -2,7 +2,6 @@ import 'package:canteeapp/utils/colors.dart';
 import 'package:canteeapp/widgets/big_text.dart';
 import 'package:canteeapp/widgets/small_text.dart';
 import 'package:flutter/material.dart';
-
 import 'home_page_body.dart';
 
 class MainFoodPage extends StatefulWidget {
