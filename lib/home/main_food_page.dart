@@ -1,4 +1,5 @@
 import 'package:canteeapp/utils/colors.dart';
+import 'package:canteeapp/utils/dimensions.dart';
 import 'package:canteeapp/widgets/big_text.dart';
 import 'package:canteeapp/widgets/small_text.dart';
 import 'package:flutter/material.dart';
@@ -19,8 +20,8 @@ class _MainFoodPageState extends State<MainFoodPage> {
         children: [
           Container(
             child: Container(
-              margin: EdgeInsets.only(top: 45, bottom: 15),
-              padding: EdgeInsets.only(left: 30, right: 20),
+              margin: EdgeInsets.only(top: Dimensions.width45, bottom: Dimensions.height15),
+              padding: EdgeInsets.only(left: Dimensions.width30, right: Dimensions.width20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -36,11 +37,11 @@ class _MainFoodPageState extends State<MainFoodPage> {
                     ],
                   ),
                   Container(
-                    width: 45,
-                    height: 45,
+                    width: Dimensions.width45,
+                    height: Dimensions.height45,
                     child: Icon(Icons.search, color: Colors.white,),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadiusDirectional.circular(15),
+                      borderRadius: BorderRadiusDirectional.circular(Dimensions.radius15),
                       color: AppColors.mainColor,
                     ),
                   )

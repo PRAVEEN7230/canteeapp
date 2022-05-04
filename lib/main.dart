@@ -1,7 +1,6 @@
-import 'package:canteeapp/home/main_food_page.dart';
+import 'package:canteeapp/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'home/main_food_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,12 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: 'Cantee',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MainFoodPage(),
+      home: HomePage(),
     );
   }
 }
