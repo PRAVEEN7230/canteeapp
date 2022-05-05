@@ -1,8 +1,9 @@
 import 'package:canteeapp/utils/colors.dart';
 import 'package:canteeapp/utils/dimensions.dart';
-import 'package:canteeapp/utils/icon_and_text.dart';
+import 'package:canteeapp/widgets/icon_and_text.dart';
 import 'package:canteeapp/widgets/big_text.dart';
 import 'package:canteeapp/widgets/small_text.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -37,14 +38,28 @@ class _FoodPageBodyState extends State<FoodPageBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: Dimensions.pageView,
-      child: PageView.builder(
-          controller: pageController,
-          itemCount: 5,
-          itemBuilder: (context, index){
-        return _buildPageItem(index);
-      }),
+    return Column(
+      children: [
+        Container(
+          height: Dimensions.pageView,
+          child: PageView.builder(
+              controller: pageController,
+              itemCount: 5,
+              itemBuilder: (context, index){
+            return _buildPageItem(index);
+          }),
+        ),
+        DotsIndicator(
+          dotsCount: 5,
+          position: _currPageValue,
+          decorator: DotsDecorator(
+            activeColor: AppColors.mainColor,
+            size: const Size.square(9.0),
+            activeSize: const Size(18.0, 9.0),
+            activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+          ),
+        ),
+      ],
     );
   }
 

@@ -3,7 +3,7 @@ import 'package:canteeapp/utils/dimensions.dart';
 import 'package:canteeapp/widgets/big_text.dart';
 import 'package:canteeapp/widgets/small_text.dart';
 import 'package:flutter/material.dart';
-import 'home_page_body.dart';
+import 'food_page_body.dart';
 
 class MainFoodPage extends StatefulWidget {
   const MainFoodPage({Key? key}) : super(key: key);
