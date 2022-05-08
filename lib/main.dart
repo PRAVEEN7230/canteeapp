@@ -1,4 +1,4 @@
-import 'package:canteeapp/home/home_page.dart';
+import 'package:canteeapp/pages/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
       title: 'Cantee',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.teal,
       ),
-      home: HomePage(),
+      home: SplashScreen()//HomePage(),
     );
   }
 }

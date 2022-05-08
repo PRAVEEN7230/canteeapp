@@ -24,11 +24,11 @@ class _ExpandableTextWidgetState extends State<ExpandableTextWidget> {
     super.initState();
     if (widget.text.length > textHeight) {
       firstHalf = widget.text.substring(0, textHeight.toInt());
-      secondHalf =
-          widget.text.substring(textHeight.toInt() + 1, widget.text.length);
-    }else{
-      firstHalf=widget.text;
-      secondHalf="";
+      secondHalf = widget.text.substring(textHeight.toInt() + 1, widget.text.length);
+    }else {
+      firstHalf = widget.text;
+      secondHalf = "";
+    }
   }
 
   @override
@@ -53,12 +53,5 @@ class _ExpandableTextWidgetState extends State<ExpandableTextWidget> {
         ],
       ),
     );
-  }
-}
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
   }
 }

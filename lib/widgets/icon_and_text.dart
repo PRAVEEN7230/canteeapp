@@ -1,3 +1,4 @@
+import 'package:canteeapp/utils/dimensions.dart';
 import 'package:canteeapp/widgets/small_text.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -14,7 +15,7 @@ class IconAndText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(icon, color: iconColor,),
+        Icon(icon, color: iconColor, size: Dimensions.iconSize24,),
         SizedBox(width: 5,),
         SmallText(text: text),
       ],
