@@ -1,3 +1,4 @@
+import 'package:canteeapp/pages/cart/cart_page.dart';
 import 'package:canteeapp/utils/colors.dart';
 import 'package:canteeapp/utils/dimensions.dart';
 import 'package:canteeapp/widgets/app_column.dart';
@@ -58,7 +59,7 @@ class _PopularFoodDetailsState extends State<PopularFoodDetails> {
                 ),
                 GestureDetector(
                     onTap: (){
-                      Get.back();
+                      Get.to(()=> CartPage());
                     },
                     child: AppIcon(icon: Icons.shopping_cart_outlined)
                 ),
@@ -113,12 +114,12 @@ class _PopularFoodDetailsState extends State<PopularFoodDetails> {
               child: Row(
                 children: [
                   GestureDetector(
-                    onTap: quantity>0?(){
+                    onTap: quantity>1?(){
                       setState(() {
                         quantity--;
                       });
                     }:null,
-                    child: Icon(Icons.remove, color: quantity>0?AppColors.mainColor:AppColors.signColor,),
+                    child: Icon(Icons.remove, color: quantity>1?AppColors.mainColor:AppColors.signColor,),
                   ),
                   SizedBox(width: Dimensions.width10/2,),
                   BigText(text: quantity.toString()),
@@ -135,13 +136,18 @@ class _PopularFoodDetailsState extends State<PopularFoodDetails> {
                 ],
               ),
             ),
-            Container(
-              padding: EdgeInsets.only(top: Dimensions.height20, bottom: Dimensions.height20, left: Dimensions.width20, right: Dimensions.width20),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(Dimensions.radius20),
-                color: totalPrice>0?AppColors.mainColor:AppColors.signColor,
+            GestureDetector(
+              onTap: (){
+                Get.snackbar("Added in Cart", "Product $index", duration: Duration(seconds: 1));
+              },
+              child: Container(
+                padding: EdgeInsets.only(top: Dimensions.height20, bottom: Dimensions.height20, left: Dimensions.width20, right: Dimensions.width20),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(Dimensions.radius20),
+                  color: totalPrice>0?AppColors.mainColor:AppColors.signColor,
+                ),
+                child: BigText(text: "₹ $totalPrice | Add to cart", color: Colors.white,),
               ),
-              child: BigText(text: "₹ $totalPrice | Add to cart", color: Colors.white,),
             )
           ],
         ),

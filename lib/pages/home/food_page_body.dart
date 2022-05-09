@@ -52,7 +52,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               itemBuilder: (context, index){
             return GestureDetector(
                 onTap: (){
-                  Get.to(()=>PopularFoodDetails(index: (index+5)*11), transition: Transition.fadeIn);
+                  Get.to(()=>RecommendedFoodDetail(index: (index+5)*11,), transition: Transition.fadeIn);
                 },
                 child: _buildPageItem(index)
             );
@@ -98,7 +98,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           itemBuilder: (context, index){
             return GestureDetector(
               onTap: (){
-                Get.to(()=>RecommendedFoodDetail(index: (index+5)*11), transition: Transition.fadeIn, );
+                Get.to(()=>PopularFoodDetails(index: (index+5)*11), transition: Transition.fadeIn);
               },
               child: Container(
                 margin: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20, bottom: Dimensions.height10),

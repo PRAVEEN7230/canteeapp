@@ -1,3 +1,5 @@
+import 'package:canteeapp/pages/cart/cart_history.dart';
+import 'package:canteeapp/pages/cart/cart_page.dart';
 import 'package:canteeapp/pages/home/main_food_page.dart';
 import 'package:canteeapp/utils/colors.dart';
 import 'package:canteeapp/widgets/big_text.dart';
@@ -14,8 +16,8 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex=0;
   List pages=[
     MainFoodPage(),
-    Container(child:Center(child: BigText(text: "Next page",))),
-    Container(child:Center(child: BigText(text: "Next next.page"))),
+    CartHistory(),
+    CartPage(),
     Container(child:Center(child: BigText(text: "Next next.next.page"))),
   ];
 

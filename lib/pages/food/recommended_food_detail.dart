@@ -1,3 +1,4 @@
+import 'package:canteeapp/pages/cart/cart_page.dart';
 import 'package:canteeapp/utils/colors.dart';
 import 'package:canteeapp/utils/dimensions.dart';
 import 'package:canteeapp/widgets/app_icon.dart';
@@ -42,7 +43,7 @@ class _RecommendedFoodDetailState extends State<RecommendedFoodDetail> {
                 ),
                 GestureDetector(
                     onTap: (){
-                      Get.back();
+                      Get.to(()=> CartPage());
                     },
                     child: AppIcon(icon:Icons.shopping_cart_outlined),
                 ),
@@ -113,7 +114,7 @@ class _RecommendedFoodDetailState extends State<RecommendedFoodDetail> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GestureDetector(
-                    onTap: quantity>0?(){
+                    onTap: quantity>1?(){
                       setState(() {
                         quantity--;
                       });
@@ -121,7 +122,7 @@ class _RecommendedFoodDetailState extends State<RecommendedFoodDetail> {
                     child: AppIcon(
                         iconSize: Dimensions.iconSize24,
                         iconColor:Colors.white,
-                        backgroundColor: quantity>0?AppColors.mainColor:AppColors.signColor,
+                        backgroundColor: quantity>1?AppColors.mainColor:AppColors.signColor,
                         icon: Icons.remove
                     ),
                   ),
@@ -175,7 +176,7 @@ class _RecommendedFoodDetailState extends State<RecommendedFoodDetail> {
                 ),
                 GestureDetector(
                   onTap: (){
-                    Get.back();
+                    Get.snackbar("Added in Cart", "Product $index", duration: Duration(seconds: 1));
                   },
                   child: Container(
                     padding: EdgeInsets.only(top: Dimensions.height20, bottom: Dimensions.height20, left: Dimensions.width20, right: Dimensions.width20),
